@@ -41,84 +41,84 @@ export-release: make-dirs
 
 build-aarch64-linux-android-debug:
 	cargo build --target aarch64-linux-android 
-	cp ./target/aarch64-linux-android/debug/*.so ./lib/aarch64-linux-android
+	cp -b ./target/aarch64-linux-android/debug/*.so ./lib/aarch64-linux-android
 
 export-aarch64-linux-android-debug: build-aarch64-linux-android-debug
 	cd godot/ ; godot --export-debug "Android.aarch64-linux-android.debug" ../bin/aarch64-linux-android/superdot.debug.aarch64-linux-android.apk
 
 build-aarch64-linux-android-release:
 	cargo build --target aarch64-linux-android --release
-	cp ./target/aarch64-linux-android/release/*.so ./lib/aarch64-linux-android
+	cp -b ./target/aarch64-linux-android/release/*.so ./lib/aarch64-linux-android
 
 export-aarch64-linux-android-release: build-aarch64-linux-android-release
 	cd godot/ ; godot --export "Android.aarch64-linux-android.release" ../bin/aarch64-linux-android/superdot.release.aarch64-linux-android.apk
 
 build-armv7-linux-androideabi-debug:
 	cargo build --target armv7-linux-androideabi 
-	cp ./target/armv7-linux-androideabi/debug/*.so ./lib/armv7-linux-androideabi
+	cp -b ./target/armv7-linux-androideabi/debug/*.so ./lib/armv7-linux-androideabi
 
 export-armv7-linux-androideabi-debug: build-armv7-linux-androideabi-debug
 	cd godot/ ; godot --export-debug "Android.armv7-linux-androideabi.debug" ../bin/armv7-linux-androideabi/superdot.debug.armv7-linux-androideabi.apk
 
 build-armv7-linux-androideabi-release:
 	cargo build --target armv7-linux-androideabi --release
-	cp ./target/armv7-linux-androideabi/release/*.so ./lib/armv7-linux-androideabi
+	cp -b ./target/armv7-linux-androideabi/release/*.so ./lib/armv7-linux-androideabi
 
 export-armv7-linux-androideabi-release: build-armv7-linux-androideabi-release
 	cd godot/ ; godot --export "Android.armv7-linux-androideabi.release" ../bin/armv7-linux-androideabi/superdot.release.armv7-linux-androideabi.apk
 
 build-i686-linux-android-debug:
 	cargo build --target i686-linux-android 
-	cp ./target/i686-linux-android/debug/*.so ./lib/i686-linux-android
+	cp -b ./target/i686-linux-android/debug/*.so ./lib/i686-linux-android
 
 export-i686-linux-android-debug: build-i686-linux-android-debug
 	cd godot/ ; godot --export-debug "Android.i686-linux-android.debug" ../bin/i686-linux-android/superdot.debug.i686-linux-android.apk
 
 build-i686-linux-android-release:
 	cargo build --target i686-linux-android --release
-	cp ./target/i686-linux-android/release/*.so ./lib/i686-linux-android
+	cp -b ./target/i686-linux-android/release/*.so ./lib/i686-linux-android
 
 export-i686-linux-android-release: build-i686-linux-android-release
 	cd godot/ ; godot --export "Android.i686-linux-android.release" ../bin/i686-linux-android/superdot.release.i686-linux-android.apk
 
 build-x86_64-linux-android-debug:
 	cargo build --target x86_64-linux-android 
-	cp ./target/x86_64-linux-android/debug/*.so ./lib/x86_64-linux-android
+	cp -b ./target/x86_64-linux-android/debug/*.so ./lib/x86_64-linux-android
 
 export-x86_64-linux-android-debug: build-x86_64-linux-android-debug
 	cd godot/ ; godot --export-debug "Android.x86_64-linux-android.debug" ../bin/x86_64-linux-android/superdot.debug.x86_64-linux-android.apk
 
 build-x86_64-linux-android-release:
 	cargo build --target x86_64-linux-android --release
-	cp ./target/x86_64-linux-android/release/*.so ./lib/x86_64-linux-android
+	cp -b ./target/x86_64-linux-android/release/*.so ./lib/x86_64-linux-android
 
 export-x86_64-linux-android-release: build-x86_64-linux-android-release
 	cd godot/ ; godot --export "Android.x86_64-linux-android.release" ../bin/x86_64-linux-android/superdot.release.x86_64-linux-android.apk
 
 build-i686-unknown-linux-gnu-debug:
 	cargo build --target i686-unknown-linux-gnu 
-	cp ./target/i686-unknown-linux-gnu/debug/*.so ./lib/i686-unknown-linux-gnu
+	cp -b ./target/i686-unknown-linux-gnu/debug/*.so ./lib/i686-unknown-linux-gnu
 
 export-i686-unknown-linux-gnu-debug: build-i686-unknown-linux-gnu-debug
 	cd godot/ ; godot --export-debug "Linux/X11.i686-unknown-linux-gnu.debug" ../bin/i686-unknown-linux-gnu/superdot.debug.i686-unknown-linux-gnu
 
 build-i686-unknown-linux-gnu-release:
 	cargo build --target i686-unknown-linux-gnu --release
-	cp ./target/i686-unknown-linux-gnu/release/*.so ./lib/i686-unknown-linux-gnu
+	cp -b ./target/i686-unknown-linux-gnu/release/*.so ./lib/i686-unknown-linux-gnu
 
 export-i686-unknown-linux-gnu-release: build-i686-unknown-linux-gnu-release
 	cd godot/ ; godot --export "Linux/X11.i686-unknown-linux-gnu.release" ../bin/i686-unknown-linux-gnu/superdot.release.i686-unknown-linux-gnu
 
 build-x86_64-unknown-linux-gnu-debug:
 	cargo build --target x86_64-unknown-linux-gnu 
-	cp ./target/x86_64-unknown-linux-gnu/debug/*.so ./lib/x86_64-unknown-linux-gnu
+	cp -b ./target/x86_64-unknown-linux-gnu/debug/*.so ./lib/x86_64-unknown-linux-gnu
 
 export-x86_64-unknown-linux-gnu-debug: build-x86_64-unknown-linux-gnu-debug
 	cd godot/ ; godot --export-debug "Linux/X11.x86_64-unknown-linux-gnu.debug" ../bin/x86_64-unknown-linux-gnu/superdot.debug.x86_64-unknown-linux-gnu
 
 build-x86_64-unknown-linux-gnu-release:
 	cargo build --target x86_64-unknown-linux-gnu --release
-	cp ./target/x86_64-unknown-linux-gnu/release/*.so ./lib/x86_64-unknown-linux-gnu
+	cp -b ./target/x86_64-unknown-linux-gnu/release/*.so ./lib/x86_64-unknown-linux-gnu
 
 export-x86_64-unknown-linux-gnu-release: build-x86_64-unknown-linux-gnu-release
 	cd godot/ ; godot --export "Linux/X11.x86_64-unknown-linux-gnu.release" ../bin/x86_64-unknown-linux-gnu/superdot.release.x86_64-unknown-linux-gnu
@@ -126,14 +126,14 @@ export-x86_64-unknown-linux-gnu-release: build-x86_64-unknown-linux-gnu-release
 # Windows
 build-x86_64-pc-windows-gnu-debug:
 	cargo build --target x86_64-pc-windows-gnu
-	cp ./target/x86_64-pc-windows-gnu/debug/*.dll ./lib/x86_64-pc-windows-gnu
+	cp -b ./target/x86_64-pc-windows-gnu/debug/*.dll ./lib/x86_64-pc-windows-gnu
 
 export-x86_64-pc-windows-gnu-debug: build-x86_64-pc-windows-gnu-debug
 	cd godot/ ; godot --export-debug "Windows Desktop" ../bin/x86_64-pc-windows-gnu/superdot.debug.x86_64-pc-windows-gnu.exe
 
 build-x86_64-pc-windows-gnu-release:
 	cargo build --target x86_64-pc-windows-gnu --release
-	cp ./target/x86_64-pc-windows-gnu/release/*.dll ./lib/x86_64-pc-windows-gnu
+	cp -b ./target/x86_64-pc-windows-gnu/release/*.dll ./lib/x86_64-pc-windows-gnu
 
 export-x86_64-pc-windows-gnu-release: build-x86_64-pc-windows-gnu-release
 	cd godot/ ; godot --export "Windows Desktop" ../bin/x86_64-pc-windows-gnu/superdot.release.x86_64-pc-windows-gnu.exe
