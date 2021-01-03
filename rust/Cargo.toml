@@ -1,0 +1,16 @@
+[package]
+name = "superdot"
+version = "0.1.0"
+authors = ["roger <rogerduran@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+gdnative = "0.9.1"
+# gdnative = { path = "../../godot-rust/gdnative" }
+
+[build-dependencies]
+gdnative-project-utils = "0.1.2"
+glob = "0.3.0"
