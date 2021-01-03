@@ -109,9 +109,10 @@ build-i686-unknown-linux-gnu-release:
 export-i686-unknown-linux-gnu-release: build-i686-unknown-linux-gnu-release
 	cd godot/ ; godot --export "Linux/X11.i686-unknown-linux-gnu.release" ../bin/i686-unknown-linux-gnu/superdot.release.i686-unknown-linux-gnu
 
+# TODO: assume we are developing in linux x86_64
 build-x86_64-unknown-linux-gnu-debug:
-	cargo build --target x86_64-unknown-linux-gnu 
-	cp -b ./target/x86_64-unknown-linux-gnu/debug/*.so ./lib/x86_64-unknown-linux-gnu
+	cargo build
+	cp -b ./target/debug/*.so ./lib/x86_64-unknown-linux-gnu
 
 export-x86_64-unknown-linux-gnu-debug: build-x86_64-unknown-linux-gnu-debug
 	cd godot/ ; godot --export-debug "Linux/X11.x86_64-unknown-linux-gnu.debug" ../bin/x86_64-unknown-linux-gnu/superdot.debug.x86_64-unknown-linux-gnu
@@ -148,7 +149,7 @@ clean:
 	cargo clean
 	
 watch:
-	cargo watch -s "make build-x86_64-unknown-linux-gnu-debug"
+	cargo watch -w rust/ -s "make build-x86_64-unknown-linux-gnu-debug"
 
 create-debug-keystore:
 	keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore superdot.debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
